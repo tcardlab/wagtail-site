@@ -1,0 +1,436 @@
+{% extends "tclab_base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-aboutpage{% endblock %}
+
+{% block extra_js %}
+	{{ block.super }}
+	<!-- FontAwesome (FA)-->
+	<!--<script src="https://use.fontawesome.com/06fe931e6d.js"></script>-->
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block extra_css %}
+	{{ block.super }}
+	<style type="text/css">
+
+	 svg{
+	  color: white;
+
+	  -webkit-transition: color .5s; /* Safari */
+      transition: color .5s;
+	 }
+
+	svg:hover {
+		color: red;
+	    text-decoration: none;
+
+	    -webkit-transition: color .5s; /* Safari */
+    	transition: color .5s;
+	}
+
+	.RG{
+		color: white;
+		text-decoration: none;
+
+		-webkit-transition: color .5s;
+        transition: color .5s;
+	}
+
+	.RG:hover {
+		color: red;
+	    text-decoration: none;
+
+	    -webkit-transition: color .5s;
+    	transition: color .5s;
+	}
+
+
+	.card-body#webcard{
+		float: left;
+        width: auto;
+    }
+
+
+	#netcard.card-text {
+	    height: 100px;
+	    overflow: hidden;
+	}
+
+	#netcard {
+		width:100%;
+		height: auto;
+		display: inline-block;
+		border-radius: .75rem;
+		overflow: hidden;
+	}
+
+	.card#netcard img{
+		float: left;
+		width: 30%;
+		height: auto;
+	}
+
+	.card-body#netcard{
+		float: left;
+        width: 70%;
+    }
+
+    /*slow zoom*/
+	.card#netcard:hover img{
+		transform: scale(1.05);
+		transition: all 1s ease 0s;
+	}
+	/*slow return*/
+	.card#netcard img{
+		transition: all 1s ease 0s;
+	}
+	</style>
+{% endblock %}
+
+
+
+{% block middle %}
+	<br>
+	<div class="row">
+		<div class="col-sm-5 text-center">
+	        {% image page.image original class="img-fluid img-thumbnail" id="aboutimg"%}
+
+	        <a href="https://twitter.com/CardTo5" class="fab fa-twitter"></a>
+
+	        <a href="https://www.quora.com/profile/Thomas-J-Card" class="fab fa-quora"></a>
+
+	        <a href="https://www.reddit.com/user/cardto5/" class="fab fa-reddit-alien"></a>
+
+	        <a href="https://www.youtube.com/channel/UCRySbgo-3sE3PWRkaLBazyw" class="fab fa-youtube"></a>
+
+	        <a href="https://www.linkedin.com/in/thomas-j-card-tcard2-072443129/" class="fab fa-linkedin-in"></a>
+
+	        <a class="RG" href="https://www.researchgate.net/profile/Thomas_Card">R<sup>G</sup></a>
+
+	        <a href="#" class="fab fa-trello"></a>
+
+	        <a href="https://drive.google.com/open?id=173v90RKR2NPH8ju8k0CkfUDr3Yq9AkGU" class="fab fa-google"></a>
+
+	        <a href="https://drive.google.com/open?id=173v90RKR2NPH8ju8k0CkfUDr3Yq9AkGU" class="fab fa-google-drive"></a><!--Broken...-->
+
+	        <a href="https://github.com/tcardlab" class="fab fa-github-alt"></a>
+
+	        <a class="btn btn-outline-light" style="width:100%;" href="mailto:TCardLAB@gmail.com">Send Email</a>
+		</div>
+
+
+		<div class="col-sm-7 text-center">
+			<h1 class="text-sm-left" >{{page.name}}</h1>
+			<!--{{page.bio|richtext}}-->
+			{% lorem 2 p %}
+		</div>
+	</div>
+
+
+
+	<hr style="color:black; font-size:5rem;">
+
+	<h3>Uses:</h3>
+	<div class="row">
+		<div class="d-flex mx-auto">
+		{% for block in page.uses %}
+		    {% if block.block_type == 'paragraph'%}
+		        <div class="card" id="mycard"style="padding:15px; margin:10;">
+		            {% include_block block %}
+		        </div>
+		    {% endif %}
+		{% endfor %}
+		</div>
+
+
+
+<div class="card" id="tabs2">
+  <div class="card-header" id="blogprev">
+    <ul class="nav nav-tabs card-header-tabs" id="webTab" role="tablist">
+      <li class="nav-item" id="all-tab">
+        <a class="RG nav-link active" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="false">All</a>
+      </li>
+
+      <li v-for="(item, index) in sites2">
+      	<a class="nav-link" :id="index+'-tab'" data-toggle="tab" :href="'#'+index" role="tab" :aria-controls="index" aria-selected="false">
+      		<i :class="'fab '+item" style=".nav-link.active.fab{color:red;}"></i>
+      	</a>
+	  </li>
+
+      <li class="nav-item">
+        <a class="nav-link RG" :id="sites2.length+'tab'" data-toggle="tab" :href="'#'+sites2.length" role="tab" :aria-controls="sites2.length" aria-selected="false">R<sup>G</sup></a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="tab-content" id="webTabContent">
+  	<div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+  		hi
+	</div>
+
+	<slot v-for="(item, index) in sites2">
+		<div class="tab-pane fade show" :id="index" role="tabpanel" :aria-labelledby="index+'-tab'">
+
+	  	
+		  <div v-for="(value, key) in orderedTime" :key='key'>
+			<div class="card" style="border:2px solid #e6e6e6; margin:3px;"id="webcard">
+			  <div class="card-header text-white" style="background-color: #b32400;">
+			    <h3> <strong>Quora</strong>
+			    <p class="float-right">[[key+1]]</p>
+			    </h3>
+			  </div>
+			  <div class="card-body" id="webcard">
+			    <a class="h4" :href="value.link">
+			      [[value.qtext]]
+			    </a>
+			  </div>
+			  <div class="collapse" :id="key+'web'">
+				  <div class="card-body" v-if="value.answer!=null" v-html="value.answer.atext" id="webcard">
+				  </div>
+			  </div>
+			  <div class="card-footer text-muted" style="background-color: #e6e6e6;">
+			    [[value.time]]
+
+			    <!--type="button"-->
+			    <a class="float-right" data-toggle="collapse" v-bind:data-target="'#'+key+'web'" aria-expanded="false" :aria-controls="key+'web'" v-if="value.answer!=null"
+
+			    v-on:click="value.show = !value.show ? true : false">
+				    <i v-if="value.show == false">Show Answer</i>
+				    <i v-else>Hide Answer</i>
+
+
+				<!--although you have to alter the dataset this is pretty simple-->
+
+
+			    <!--
+			    tried to use a list, but it wouldnt let me access the added data.
+			    v-on:click="show[key]= !show[key] ? true : false">
+			    	[[show.key]]
+				    <p v-if="show[key]==true">Hide Answer</p>
+				    <p v-else>Show Answer2</p>
+				-->
+
+
+			    <!-- very good for how simple it is... but not perfect...
+
+				v-on:click="show= !show ? 'show'+key : false ">
+				    <p v-if="show == 'show'+key">Hide Answer</p>
+				    <p v-else>Show Answer</p>
+				 -->
+				</a>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</slot>
+
+	<div class="tab-pane fade show" id="8" role="tabpanel" aria-labelledby="8-tab">
+  		yup
+	</div>
+
+  </div>
+</div>
+
+
+<!--console.log(app.__vue__._data.var)-->
+<!--console.log(tabs2.__vue__._data.show)-->
+
+<!--
+<div class="card" id="tabs">
+  <div class="card-header" id="blogprev">
+    <ul class="nav nav-tabs card-header-tabs" id="webTab" role="tablist">
+      <li class="nav-item" id="all-tab">
+        <a class="nav-link active" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="false">All</a>
+      </li>
+
+      <li v-for="(item, index) in sites2">
+      	<a class="nav-link" :id="index+'-tab'" data-toggle="tab" :href="'#'+index" role="tab" :aria-controls="index" aria-selected="false">
+      		<i :class="'fab '+item"></i>
+      	</a>
+	  </li>
+
+      <li class="nav-item">
+        <a class="nav-link" :id="sites2.length+'tab'" data-toggle="tab" :href="'#'+sites2.length" role="tab" :aria-controls="sites2.length" aria-selected="false">R<sup>G</sup></a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="tab-content" id="webTabContent">
+  	<div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+  		hi
+	</div>
+
+	<slot v-for="(item, index) in sites2">
+		<div class="tab-pane fade show" :id="index" role="tabpanel" :aria-labelledby="index+'-tab'">
+	  		[[index]]
+		</div>
+	</slot>
+
+	<div class="tab-pane fade show" id="8" role="tabpanel" aria-labelledby="8-tab">
+  		yup
+	</div>
+  </div>
+</div>
+-->
+
+<!--
+		<ul id="test">
+		  <li v-for="(value, key) in orderedTime">
+			<div class="card" id="webcard">
+			  <div class="card-header text-white" style="background-color: #b32400;">
+			    <h3 class="" > <strong>Quora</strong>
+			    <p class="float-right">[[key+1]]</p>
+			    </h3>
+			  </div>
+			  <div class="card-body">
+			    <a class="h4" :href="value.link">
+			      [[value.qtext]]
+			    </a>
+			  </div>
+			  <div class="collapse" :id="key">
+				  <div class="card-body" v-if="value.answer!=null" v-html="value.answer.atext">
+				  </div>
+			  </div>
+			  <div class="card-footer text-muted" style="background-color: #e6e6e6;">
+			    [[value.time]]
+
+			    <a class="float-right" type="button" data-toggle="collapse" v-bind:data-target="'#'+key" aria-expanded="false" :aria-controls="key" v-if="value.answer!=null"
+
+				v-on:click="show = !show">
+				    <p v-if="show==false">Show Answer</p>
+				    <p v-else>Hide Answer</p>
+
+				</a>
+			  </div>
+			</div>
+		  </li>
+		</ul>
+-->
+
+
+<!--		<ul id="test">
+		  <li v-for="(value, key) in orderedTime">
+		    [[key]] : [[value.time]] [[value.epoch]]
+		    <div class="card mb-3" id="netcard" >
+				<a :href="value.link">
+
+				<img src="https://imgf.downloadapk.net/f/54/9d92f2_150.png"  class="card-img-top" id="netcard"/>
+
+				<div class="card-body" id="netcard">
+					<p class="card-title">
+						[[value.qtext]]
+					</p>
+				</a>
+					<p class="card-text" v-if="value.answer!=null" v-html="value.answer.atext">
+					</p>
+					<a class="float-right" :href="value.link" v-if="value.answer!=null">read more</a>
+					<p style="position: absolute; bottom: 0;">[[value.time]]</p>
+				</div>
+			</div>
+
+		  </li>
+		</ul>
+-->
+	<!-- front end filter -->
+	<script src="https://unpkg.com/vue"></script>
+	<!-- http get request -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<!-- for sorting epoch-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.core.min.js"></script>
+
+
+	<script type="text/javascript">
+		// var app=new Vue({
+		//     el: "#test",
+		//     delimiters: ['[[', ']]'],
+		//     data: {
+		//         results: [],
+		//     },
+
+		//     //cleanup getquora path, function, etc.
+		//     created() {
+		//         axios.get("getQuora2").then(response => {this.results = response.data})
+		//     },
+		    
+		//     computed: {
+		// 	    orderedTime: function () {
+		// 	        return _.sortBy(this.results, "epoch").reverse()
+		// 	    }
+		// 	}
+		// });
+
+		// var app=new Vue({
+		//     el: "#tabs",
+		//     delimiters: ['[[', ']]'],
+		//     data: {
+		//         show: false,
+		//         sites2: ["fa-quora", "fa-reddit-alien", "fa-youtube", "fa-twitter", "fa-linkedin-in", "fa-trello", "fa-google-drive", "fa-github-alt"],
+		//     },
+		// });
+
+
+		var app=new Vue({
+		    el: "#tabs2",
+		    delimiters: ['[[', ']]'],
+		    data:{
+		        results: [],
+		        sites2: ["fa-quora", "fa-reddit-alien", "fa-youtube", "fa-twitter", "fa-linkedin-in", "fa-trello", "fa-google-drive", "fa-github-alt"],
+		        //show: false ,//[],//false, 
+		        //added show feild to json... not happy..
+		    },
+
+		    //cleanup getquora path, function, etc.
+		    created() {
+		        axios.get("getQuora2").then(response => {this.results = response.data})
+		    },
+		    
+		    computed: {
+			    orderedTime: function () {
+			        return _.sortBy(this.results, "epoch").reverse()
+			    },
+			},
+		});
+	</script>
+{% endblock %}
+
+
+
+
+	G-docs???
+
+	$$$
+	support
+
+	Uses: 
+		coding
+			Ide's:
+				anoconda
+				SublimeText- see setup
+				check out: https://code.visualstudio.com/
+			Frameworks:
+				Wagtail CMS (Django)
+				Bootstrap
+				Jquery
+				Vue.js
+		Websites
+			Trello-inlue of signup
+			eat this much
+			Brilliant
+		Mac apps
+			Flux
+			easy on the eyes
+		Chrome extensions:
+			The great suspender
+			curiosity smart tab
+			Grammerly 
+			Tabs Outliner
+
+		Others People
+			Code Blogs:
+				http://maxgoodridge.com/
+				https://assertnotmagic.com/
+			Scientists:
+				perhaps too many...
+

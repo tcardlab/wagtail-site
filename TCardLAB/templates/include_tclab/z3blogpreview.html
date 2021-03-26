@@ -1,0 +1,121 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<!-- Blog Previews -->
+<div class="card text-center" id="blogprev">
+
+	<!-- Tab Titles -->
+	<div class="card-header" id="blogprev">
+		<ul class="nav nav-tabs card-header-tabs" id="blogTab" role="tablist">
+			{% for blog in indexpages %}
+			    {% with blog=blog.specific num=forloop.counter0 %}
+			    	<li class="nav-item" id="blogprev">
+						<a class="nav-link" id="{{ num }}-tab" data-toggle="tab" href="#{{ num }}" role="tab" aria-controls="{{ num }}" aria-selected="false"> {{ blog.title }} </a>
+					</li>
+			    {% endwith %}
+			{% endfor %}
+		</ul>
+	</div>
+
+	<!-- Tab content -->
+	<div class="tab-content" id="blogTabContent" >
+		{% for blog in indexpages %}
+			{% with blog=blog.specific num=forloop.counter0%}
+				<div class="tab-pane fade show" id="{{ num }}" role="tabpanel" aria-labelledby="{{ num }}-tab">
+
+					get {{ blog.title }} posts
+
+					{% for post in blogpages %}
+						{% with post=post.specific %}
+							{% if blog.slug in post.url %}
+					        	<h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+					        	<p>{{ post.intro }}</p>
+					        {% endif %}
+						{% endwith %}
+					{% endfor %}
+
+				</div>
+			{% endwith %}
+		{% endfor %}
+	</div>
+</div>
+
+
+{% for blog in indexpages %}
+    	{% with blog.get_children.live.specific|dictsort:"first_published_at"|last as test %}
+    		<h2><a href="{{ test.url }}">
+    			{{ test.title }}
+    		</a></h2>
+			<p>{{ test.intro }}</p>
+    	{% endwith %}
+{% endfor %}
+
+{% for blog in indexpages %}
+    	{% for test in blog.get_children.live|dictsort:"first_published_at" reversed %}
+    		<h2>
+    			<a href="{% pageurl test %}">{{ test.title }}</a>
+    		</h2>
+			<p>{{ test.specific.intro }}</p>
+    	{% endfor %}
+{% endfor %}
+
+
+{% for blog in indexpages %}
+	{% with blog=blog.specific %} 
+		{% for post in blogpages %}
+			{% with post=post.specific %}
+				{% if blog.slug in post.url %}
+		        	<h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+		        	<p>{{ post.intro }}</p>
+		        {% endif %}
+			{% endwith %}
+		{% endfor %}
+	{% endwith %}
+{% endfor %}
+<!--
+def get_context(self, request):
+        # Update context to include only published posts, ordered by reverse-chron
+        context = super(HomePage, self).get_context(request)
+
+        blogpages = BlogPage.objects.live().order_by('-first_published_at') #[:1]
+        indexpages = BlogIndexPage.objects.live() #working
+        context['blogpages'] = blogpages
+        context['indexpages'] = indexpages 
+        return context
+-->
+
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+	$ (document).ready(function() {
+		// Initial active
+		$ ('#0').addClass('active');
+		$ ('#0-tab').addClass('active');
+		
+		// Timed switch
+		// var i = 1;
+		var myVar = setInterval(Timer, 6000);
+		function Timer() {
+			i = parseInt($ ("div.active").attr("id"))+1;
+			$ ('div.active').removeClass('active');
+			$ ('a.active').removeClass('active');
+
+			//id = '#'+((i++)%3).toString();
+			id = '#'+(i%3).toString(); //++ didnt work,weird
+		    $ (id).addClass('show active');
+		    $ (id+'-tab').addClass('active'); //.focus not formatted
+		};
+
+		// Stop in area
+		// $('a').click( function() {
+		//     clearInterval(myVar);
+		// });
+		$('#blogprev').mouseenter( function() {
+		    clearInterval(myVar);
+		});
+
+		// Restart when gone
+		$('#blogprev').mouseleave( function() {
+		    myVar = setInterval(Timer, 6000);
+		    return myVar;
+		});
+	}); 
+</script>

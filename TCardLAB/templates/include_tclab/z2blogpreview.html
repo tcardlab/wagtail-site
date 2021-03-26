@@ -1,0 +1,187 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+
+
+
+{% for blog in test %}
+    {% with blog=blog.specific %}
+        <h2><a href="{% pageurl blog %}">{{ blog.title }}</a></h2>
+
+        <p>{{ blog.intro }}</p>
+        {{ blog.body|richtext }}
+        {% if "sci-log" in blog.url %}
+        	<h2>Yes!</h2>
+        {% endif %}
+
+        {% if "pro-log" in blog.url %}
+        	<h2>Yes!</h2>
+        {% endif %}
+    {% endwith %}
+{% endfor %}
+<!--
+def get_context(self, request):
+    # Update context to include only published posts, ordered by reverse-chron
+    context = super(HomePage, self).get_context(request)
+    test = BlogPage.objects.live().order_by('-first_published_at')
+    context['test'] = test
+    return context
+-->
+
+
+<!-- Blog Previews -->
+<div class="card text-center" id="blogprev">-->
+
+	<!-- Tab Titles -->
+	<div class="card-header" id="blogprev">
+		<ul class="nav nav-tabs card-header-tabs" id="blogTab" role="tablist">
+		<li class="nav-item" id="blogprev">
+			<a class="nav-link active" id="prolog-tab" data-toggle="tab" href="#prolog" role="tab" aria-controls="prolog" aria-selected="true">Pro-Log</a>
+		</li>
+		<li class="nav-item" id="blogprev">
+			<a class="nav-link" id="scilog-tab" data-toggle="tab" href="#scilog" role="tab" aria-controls="scilog" aria-selected="false">Sci-Log</a>
+		</li>
+		<li class="nav-item" id="blogprev">
+			<a class="nav-link" id="miscblog-tab" data-toggle="tab" href="#miscblog" role="tab" aria-controls="miscblog" aria-selected="false">Misc-Blog</a>
+		</li>
+		</ul>
+	</div>
+
+	<!-- Tab content -->
+	<div class="tab-content" id="blogTabContent" >
+		<div class="tab-pane fade show active" id="prolog" role="tabpanel" aria-labelledby="prolog-tab">
+			most popular project post<br>
+			newest post<br>
+			random post
+			{% for post in blogpages %}
+			    {% with post=post.specific %}
+			        <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+
+			        {% with post.main_image as main_image %}
+			            {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
+			        {% endwith %}
+
+			        <p>{{ post.intro }}</p>
+			        {{ post.body|richtext }}
+			    {% endwith %}
+			{% endfor %}
+		</div>
+
+		<div class="tab-pane fade" id="scilog" role="tabpanel" aria-labelledby="scilog-tab">
+			most popular science post<br>
+			newest post<br>
+			random post<br>
+			{{page.get_children}}<br>
+		</div>
+
+		<div class="tab-pane fade" id="miscblog" role="tabpanel" aria-labelledby="miscblog-tab">
+			most popular misc. post<br>
+			newest post<br>
+			random post<br> 
+			{% for post in test %}
+			    {% with post=post.specific %}
+			        <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+
+			        {% with post.main_image as main_image %}
+			            {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
+			        {% endwith %}
+
+			        <p>{{ post.intro }}</p>
+			        {{ post.body|richtext }}
+			    {% endwith %}
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+{% for blog in indecies %}
+    {% with blog=blog.specific %}
+        <h2><a href="{% pageurl blog %}">{{ blog.title }}</a></h2>
+
+        <p>{{ blog.intro }}</p>
+        {{ blog.body|richtext }}
+    {% endwith %}
+{% endfor %}
+
+
+<!-- Blog Previews -->
+<div class="card text-center" id="blogprev">
+
+	<!-- Tab Titles -->
+	<div class="card-header" id="blogprev">
+		<ul class="nav nav-tabs card-header-tabs" id="blogTab" role="tablist">
+			{% for blog in indecies %}
+			    {% with blog=blog.specific num=forloop.counter0 %}
+			    	<li class="nav-item" id="blogprev">
+						<a class="nav-link" id="{{ num }}-tab" data-toggle="tab" href="#{{ num }}" role="tab" aria-controls="{{ num }}" aria-selected="false"> {{ blog.title }} </a>
+					</li>
+			    {% endwith %}
+			{% endfor %}
+		</ul>
+	</div>
+
+	<!-- Tab content -->
+	<div class="tab-content" id="blogTabContent" >
+		{% for blog in indecies %}
+			{% with blog=blog.specific num=forloop.counter0%}
+				<div class="tab-pane fade show" id="{{ num }}" role="tabpanel" aria-labelledby="{{ num }}-tab">
+					get {{ blog.title }} posts
+				</div>
+			{% endwith %}
+		{% endfor %}
+	</div>
+</div>
+
+<p id="test"></p>
+<!--<button id="stop">Stop time</button>-->
+
+
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+	// //add active//
+	// $(document).ready(function() {
+	// 	$ ('#0').addClass('active');
+	// });
+
+	// //timer test1//
+	// var myVar = setInterval(myTimer, 2000);
+	// var d = 0;
+	// function myTimer() {
+	//     document.getElementById("test").innerHTML = (d++)%3;
+	// }
+
+	// //timer test2//
+	// $ (document).ready(function() {
+	// 	$ ('#0').addClass('active');
+	// 	var myVar = setInterval(myTimer, 2000);
+	// 	var i = 1;
+	// 	function myTimer() {
+	// 	    document.getElementById("test").innerHTML = (i++)%3;
+	// 	}
+	//
+	//	$('#stop').click( function() {
+	//	    clearInterval(myVar);
+	//	});
+	// });
+	
+
+	$ (document).ready(function() {
+		$ ('#0').addClass('active');
+		$ ('#0-tab').addClass('active');
+		
+		var i = 1;
+		var myVar = setInterval(Timer, 6000);
+		function Timer() {
+			$ ('div.active').removeClass('active');
+			$ ('a.active').removeClass('active');
+		    id = '#'+((i++)%3).toString();
+		    document.getElementById("test").innerHTML = id;
+		    $ (id).addClass('active');
+		    $ (id+'-tab').addClass('active'); //.focus not formatted
+		};
+
+		$('a').click( function() {
+		    clearInterval(myVar);
+		});
+	}); 
+
+</script>

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+
+
+{% block extra_css %}
+	{{ block.super }}
+	<!-- My CSS Style import -->
+	<link rel="stylesheet" href="{% static 'css/include.css' %}">
+	<link rel="stylesheet" href="{% static 'css/homestyle.css' %}">
+{% endblock %}
+
+
+{% block title %} TCardLAB: {{ page.title }}  {% endblock %}
+
+
+{% block content %}
+		<!-- supreme-container for modal blur, ignore -->
+		<div class="supreme-container">
+
+		<!-- Header(Banner?) -->
+		{%include "include_tclab/header.html" %}
+
+		<!-- Navbar -->
+		{%include "include_tclab/navbar.html" %}
+
+	    <!-- Content Container -->
+	    <div class="container-fluid">
+	    	<div class="row" id= "myrow">
+	    		<!-- Left Column -->
+				<div class="col-2 d-none d-md-block">
+					<br>
+					{% block left %}{% endblock %}
+				</div>
+
+				<!-- Content Column -->
+				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id= "mycol">
+					{% block middle %}{% endblock %}
+				</div>
+
+				<!-- Right Column -->
+				<div class="col-2 d-none d-md-block">
+					<br>
+					{% block right %}{% endblock %}
+				</div>
+
+	    	</div>	<!-- Close: row-->
+	    </div> 	<!-- Close: container-->
+
+	    <!-- Footer -->
+	    {% include "include_tclab/footer.html" %}
+
+    </div>	<!-- Close: supreme-container -->
+
+    <!-- Modal: Must be outside supreme container -->
+	{% include "include_tclab/modallogin.html" %}
+
+{% endblock %}

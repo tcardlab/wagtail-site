@@ -1,0 +1,38 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="ModalLogin" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" id="modaLogin">
+      <div class="modal-header" id="modaLogin">
+        <h5 class="modal-title" id="modaLogin">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white; text-shadow: none; padding-top: 10px;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+  <div class="modal-body">
+    <form>
+		  <div class="form-group" id="input">
+		    <input class="form-control" type="email" id="Input1" aria-describedby="emailHelp" placeholder="Enter email">
+		    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+		  </div>
+		  <div class="form-group" id="input">
+		    <input class="form-control" type="password" id="Input2" placeholder="Password">
+        <small class="form-text text-muted">Though, your password is another story.~</small>
+		  </div>
+		  <div class="form-check">
+		    <input type="checkbox" class="form-check-input" id="rememberCheck">
+		    <label class="form-check-label" for="rememberCheck">Remember me</label>
+		  </div>
+		</form>
+  </div>
+      <div class="modal-footer justify-content-between" id="modaLogin">
+        <div>
+          <a href=""> register </a>
+          <br>
+          <a href=""> forgot something? </a>
+        </div>
+        <button type="submit" class="btn btn-outline-light" data-dismiss="modal"> Login</button>
+      </div>
+    </div>
+  </div>
+</div>

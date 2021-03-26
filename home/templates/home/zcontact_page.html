@@ -1,0 +1,121 @@
+{% extends "tclab_base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-contactpage{% endblock %}
+
+{% block middle %}
+	<h1>{{ page.title }} Me:</h1>
+    {{ page.intro|richtext }}
+    <form action="{% pageurl page %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit">
+
+        {{ form.Email.as_p }}
+    </form>
+
+    {% for field in form %} 
+	    {{ field }} 
+	{% endfor %} 
+
+	{% for field in form %} 
+    <div class="fieldWrapper"> 
+        {{ field.errors }} 
+        {{ field.label_tag }} {{ field }} 
+        {% if field.help_text %} 
+        <p class="help">{{ field.help_text|safe }}</p> 
+        {% endif %} 
+    </div> 
+	{% endfor %} 
+
+	<a class="btn" href="mailto:TCardLAB@gmail.com">Send Email</a>
+
+
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
+
+<div id="app">
+    <p><router-link to="/page1">Go to Page 1</router-link></p>
+    <p><router-link to="/page2">Go to Page 2</router-link></p>
+    <p><router-view></router-view></p>
+</div>
+
+<script>
+    var PageOneComponent = Vue.component('comp2',{
+        template: '<p>Component One</p>'
+    })
+    var PageTwoComponent = Vue.component('comp1',{
+        template: '<p>Component Two</p>'
+    })
+
+    const routes = [
+        {path: '/page1', component: PageOneComponent},
+        {path: '/page2', component: PageTwoComponent}
+    ]
+
+    const router = new VueRouter({
+        routes
+    })
+
+    var app = new Vue({
+        router
+    }).$mount('#app')
+</script>
+{% endblock %}
+
+        
+
+
+	Content:
+	blogs and showcase
+	youtube
+	github
+	docs???
+
+	Questions and answers:
+	stack overflow
+	research gate
+	quora
+	reddit
+
+	Profiles:
+	linkedin
+	twitter
+
+	Contact:
+	contact me through contact
+
+	$$$
+	support
+
+
+	Uses: 
+		coding
+			Ide's:
+				anoconda
+				SublimeText- see setup
+				check out: https://code.visualstudio.com/
+			Frameworks:
+				Wagtail CMS (Django)
+				Bootstrap
+				Jquery
+				Vue.js
+		Websites
+			Trello-inlue of signup
+			eat this much
+			Brilliant
+		Mac apps
+			Flux
+			easy on the eyes
+		Chrome extensions:
+			The great suspender
+			curiosity smart tab
+			Grammerly 
+			Tabs Outliner
+
+		Others People
+			Code Blogs:
+				http://maxgoodridge.com/
+				https://assertnotmagic.com/
+			Scientists:
+				perhaps too many...

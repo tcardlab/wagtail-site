@@ -1,0 +1,42 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+
+{% for child in content %}
+	{% if child.block_type == 'cardblock' %}
+		<span class="card mb-3" id="mycard" >
+
+			{% image child.value.image original as theimage %}
+			<a href="{{ child.value.page.url }}">
+			<img src="{{ theimage.url }}"  class="card-img-top"/>
+			
+			<div class="card-body">
+				<h5 class="card-title">
+					{{ child.value.heading }}
+				</h5>
+			</a>
+				<p class="card-text d-none d-sm-block">
+					{{ child.value.caption }}
+				</p>
+			</div>
+		</span>
+
+	{% elif child.block_type == 'tileblock' %}
+		<div class="tile" id="keytile"> <!--Schedge-->
+			{% image child.value.image original as theimage %}
+
+			<img "{{ theimage.attrs }}" class="tile__media" />
+
+			<span class="tile__content">
+		    	<h1 class="h-5 text-white">
+		    		{{ child.value.heading }}
+		    	</h1>
+
+				<hr class="my-1" style = "background-color: white;"/>
+
+				<p class="lead text-white d-none d-sm-block">{{ child.value.caption }}</p>
+
+				<a class="btn d-none d-sm-inline" href="{{ child.value.page.url }}" id="hoverbtn">Learn more</a>
+			</span>
+		</div>
+	{% endif %}
+{% endfor %}

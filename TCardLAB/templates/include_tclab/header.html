@@ -1,0 +1,33 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<!-- Header -->
+<div class="jumbotron d-none d-sm-block" id="topjumbo" style="display:block;">
+	<form class="form-inline" action="{% url 'search' %}" method="get" style="position: absolute; top:0%; right:0%; margin:10px; margin-right: 32px;" >
+		<input class="form-control mr-sm-1" type="search" 
+
+		name="query"{% if search_query %} value="{{ search_query }}"{% endif %}
+
+		placeholder="Search" aria-label="Search" id="search">
+
+		<button class="btn btn-outline-light" type="submit">
+			<i class="material-icons" id='search'>search</i> 
+		</button>
+	</form>
+
+	<div class="d-inline h1 text-white" >
+		<a href="{% slugurl 'home' %}" style="text-decoration: none; color:white;"> TCardLAB </a>
+	</div>
+	<div class="d-inline h3" id="current">
+		{%if page.blogpage %}
+			{{ page.get_parent.title }}
+		{%else %}
+			{{ page.title }}
+		{%endif%}
+	</div>
+
+	<!-- Button trigger modal -->
+	<button type="button" class="btn btn-outline-light" 
+	style="float:right;" data-toggle="modal" data-target="#loginModal">
+	  Login
+	</button>
+</div>

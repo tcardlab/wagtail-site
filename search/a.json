@@ -1,0 +1,297 @@
+{
+    "5559687": {
+        "answer": {
+            "aepoch": 1499468630415395,
+            "aid": 17596088,
+            "alink": "https://www.quora.com/Can-sound-frequencies-change-your-eye-color/answer/Thomas-J-Card/share?=1",
+            "atext": "<span class=\"ui_qtext_rendered_qtext\"><p class=\"ui_qtext_para\">I am by no means an expert on the topic, however, I will do my best to answer what I can.</p><p class=\"ui_qtext_para\">First off, factors of undetectable changes in eye color. It is likely that some random environmental frequencies may be able to rattle around melanosomes and melanocytes causing minute, undetectable changes. The most common natural causes for visible changes in eye color are hormonal changes/aging, genetics, and trauma.</p><p class=\"ui_qtext_para\">As far as using sound frequencies to significantly altar iris pigmentation via medical treatment, there is no direct research. However, there are some techniques that may be plausible candidates if applied correctly. Its important to note that in order for sound to permanently change eye color, it must eliminate melanocytes. This is because adult melanocytes still undergo melanogenesis and would replace lost melanin. So, as far as permanent changes go, one can perform a localized tissue destruction with ultrasound. However, this would probably be less accurate than the current laser approach. For temporary changes, there has been some research on degradation of melanin, though they are typically under alkaline or unsafe temperatures.</p><p class=\"ui_qtext_para\">So what is left for sound in altering eye color? Assisted delivery of pigments and plasmids. The following patent: <span class=\"qlink_container\"><a class=\"external_link\" data-qt-tooltip=\"google.com\" href=\"http://www.google.com/patents/US20090192438\" onclick=\"return Q.openUrl(this, 17596088);\" rel=\"noopener nofollow\" target=\"_blank\">Patent US20090192438 - Use of Iontophoresis or Electrotherapy and Ultrasound to Deliver Melanin for Skin Rejuvenation</a></span>, uses ultrasound to assist in pigment delivery. This could potentially be applied to the iris, ultrasound has been used for targeted drug delivery before. It is also possible that microbubbles could be used to deliver a plasmid or pigment to the iris, similar to this: <span class=\"qlink_container\"><a class=\"external_link\" data-qt-tooltip=\"sciencedirect.com\" href=\"http://www.sciencedirect.com/science/article/pii/S0168365911006067\" onclick=\"return Q.openUrl(this, 17596088);\" rel=\"noopener nofollow\" target=\"_blank\">Ultrasound and microbubble-assisted gene delivery in Achilles tendons: Long lasting gene expression and restoration of fibromodulin KO phenotype</a></span>. However, there is the potential that these frequencies would be damaging to the rest of the eye.</p><p class=\"ui_qtext_para\">Over all, I feel there are more practical ways of altering eye color, such as laser treatment and viral gene delivery (<span class=\"qlink_container\"><a class=\"external_link\" data-qt-tooltip=\"nih.gov\" href=\"http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4189008/\" onclick=\"return Q.openUrl(this, 17596088);\" rel=\"noopener nofollow\" target=\"_blank\">Page on nih.gov</a></span>). However, there is not enough research to say so definitively, so it s worth keeping an open mind.</p></span>"
+        },
+        "qepoch": null,
+        "qlink": "https://www.quora.com/Can-sound-frequencies-change-your-eye-color",
+        "qtext": "Can sound frequencies change your eye color?"
+    },
+    "6033915": {
+        "answer": {
+            "aepoch": 1449393898780254,
+            "aid": 17579381,
+            "alink": "https://www.quora.com/How-can-I-make-my-iris-which-is-brown-a-lighter-shade/answer/Thomas-J-Card/share?=1",
+            "atext": "<span class=\"ui_qtext_rendered_qtext\">There are laser treatments that are capable of turning the stroma of a pigmented iris blue, violate, or gray. This is not cheap and while available in some countries it is not yet approved in the U.S.. <br/><br/>Here is a quote from Str\u014dma, a laser treatment company that is not yet available to the public. <br/><blockquote>\"Our clinical trails thus far have been limited to changing eye color from brown to blue, since that is both the simplest and most sought-after color change. We will soon begin testing dark brown to light brown color change, as well as changing hazel or green to blue, and it is possible that our first commercial laser will also be able to accommodate these color changes.\"</blockquote>So, while currently unavailable, you may have a permanent solution to look forward to. <br/><br/>If you do decide to get decorative contacts, make sure to get a prescription. Contacts are regulated by the FDA as medical devices. However, it is possible to obtain contacts through the internet with out a prescription. These are illegal, unregulated devices that can be harmful or malfunction. Please visit you eye care provider for further information.</span>"
+        },
+        "qepoch": null,
+        "qlink": "https://www.quora.com/How-can-I-make-my-iris-which-is-brown-a-lighter-shade",
+        "qtext": "How can I make my iris (which is brown) a lighter shade?"
+    },
+    "6080467": {
+        "answer": {
+            "aepoch": 1449859772217694,
+            "aid": 17727708,
+            "alink": "https://www.quora.com/How-many-different-kind-of-bases-can-be-found-on-DNA/answer/Thomas-J-Card/share?=1",
+            "atext": "<span class=\"ui_qtext_rendered_qtext\">In addition Annabelle Smyth, cytosine can be deaminated to a uracil (via hydrolysis). However, because it sticks out as odd, it is quickly fixed. So technically, you can make the argument, but its negligible for most purposes.\u00a0 <br/><br/>As Annabelle mentioned, there is also the methylation and hydroxymethylation of bases in epigenetics. Even now we are learning about new modifications making bases such as 5-formylcytosine and 5-carboxylcytosine (<span class=\"qlink_container\"><a class=\"external_link\" data-qt-tooltip=\"sciencemag.org\" href=\"http://www.sciencemag.org/content/333/6047/1300.short\" onclick=\"return Q.openUrl(this, 17727708);\" rel=\"noopener nofollow\" target=\"_blank\">Tet Proteins Can Convert 5-Methylcytosine to 5-Formylcytosine and 5-Carboxylcytosine</a></span>). <br/><br/>Also, within synthetic biology, researchers have successfully created a few <u>unnatural base pairings</u> that are inheritable (<span class=\"qlink_container\"><a class=\"external_link\" data-qt-tooltip=\"wikipedia.org\" href=\"https://en.wikipedia.org/wiki/Base_pair#Unnatural_base_pair_.28UBP.29\" onclick=\"return Q.openUrl(this, 17727708);\" rel=\"noopener nofollow\" target=\"_blank\">Base pair</a></span>). On top of this, researchers have modified the typical 4 bases with unique functional groups like fluorescent tags. These have been used in techniques like sequencing. <br/><br/>So, in many was this is a more complex question that it may appear and I am sure that there will be more to say in the future. However, for the time being you can appreciate ~9 natural, inheritable bases (which does not including that uracil I mentioned earlier), and 2 or more novel, inheritable bases.</span>"
+        },
+        "qepoch": null,
+        "qlink": "https://www.quora.com/How-many-different-kind-of-bases-can-be-found-on-DNA",
+        "qtext": "How many different kind of bases can be found on DNA?"
+    },
+    "6101610": {
+        "answer": {
+            "aepoch": 1450448546550679,
+            "aid": 17900839,
+            "alink": "https://www.quora.com/Does-my-bad-behaviour-get-passed-into-my-DNA-and-later-on-to-my-offsprings/answer/Thomas-J-Card/share?=1",
+            "atext": "<span class=\"ui_qtext_rendered_qtext\"><p class=\"ui_qtext_para\">I agree with what Spyra has stated. If your bad behavior is caused by DNA then it could be inherited. She also mentioned that your behavior will affect how your child is raised. In addition to her points, epigenetics can play a major role in how your traits will be expressed in your child. </p><p class=\"ui_qtext_para\">Epigenetics is a rapidly growing feild. It is essentially the study of inheritable information that is not DNA. This mostly includes methylation of nucleotides and the methylation/acetylation of histones. What they both have in common is changing how difficult it is to read a particular gene. The harder it is to read the less it is expressed, vise versa. These changes are inherited but can sometimes be altered by extreme or timely environmental conditions. </p><p class=\"ui_qtext_para\">There has been increasing evidence that your diet and fitness can influence the metabolism of your children. In regards to humans, I believe this to have the most research behind it. However, it's pretty safe to assume that many environmental factors and different lifestyle choices will influence your offspring, not just diet.</p><p class=\"ui_qtext_para\">So, whenever you make a choice, it is not just your life at hand, but the well being of your children and even grandchildren. </p></span>"
+        },
+        "qepoch": null,
+        "qlink": "https://www.quora.com/Does-my-bad-behaviour-get-passed-into-my-DNA-and-later-on-to-my-offsprings",
+        "qtext": "Does my bad behaviour get passed into my DNA and later on to my offsprin..."
+    },
+    "6116980": {
+        "answer": {
+            "aepoch": 1449544843603969,
+            "aid": 17624428,
+            "alink": "https://www.quora.com/If-something-looks-yellow-is-is-reflecting-light-with-a-wavelength-between-red-and-green-or-is-it-reflecting-red-and-green-light-equally/answer/Thomas-J-Card/share?=1",
+            "atext": "<span class=\"ui_qtext_rendered_qtext\">It depends on what you are looking at. Most of the things in the natural world are one frequency of light (with the exception of some butterflies and birds). So in the case of yellow it gives off that frequency, which is between red and green. <br/><br/>If you are looking at a screen of a tv or phone, you're eyes are reciving two frequencies of light, red and green. However, it causes the same pattern of stimulation in the retina as the single yellow frequency. As such you perceive the two colors as one.</span>"
+        },
+        "qepoch": null,
+        "qlink": "https://www.quora.com/If-something-looks-yellow-is-is-reflecting-light-with-a-wavelength-between-red-and-green-or-is-it-reflecting-red-and-green-light-equally",
+        "qtext": "If something looks yellow, is is reflecting light with a wavelength betw..."
+    },
+    "6122618": {
+        "answer": {
+            "aepoch": 1449545137966546,
+            "aid": 17624523,
+            "alink": "https://www.quora.com/What-would-happen-if-I-was-inside-the-Hadron-Collider/answer/Thomas-J-Card/share?=1",
+            "atext": "<span class=\"ui_qtext_rendered_qtext\">Have you ever heard of Anatoli Bugorski? <br/>He was a rusian scientist who stuck his face in a different particle accelerator during maintenance. However, the matching was turned on. He saw a bright flash of light while the particles bore a hole through his skull. He survived.<br/><br/>If you were present during the actual collision, I can't quite say. However, it's likely you be burned to crisp and experience some major radiation damage.</span>"
+        },
+        "qepoch": null,
+        "qlink": "https://www.quora.com/What-would-happen-if-I-was-inside-the-Hadron-Collider",
+        "qtext": "What would happen if I was inside the Hadron Collider?"
+    },
+    "6160195": {
+        "answer": {
+            "aepoch": 1450453538862106,
+            "aid": 17902344,
+            "alink": "https://www.quora.com/Which-RNA-base-bonds-with-adenine/answer/Thomas-J-Card/share?=1",
+            "atext": "<span class=\"ui_qtext_rendered_qtext\"><p class=\"ui_qtext_para\">Uricile, 2 Hydrogen bonds. </p></span>"
+        },
+        "qepoch": null,
+        "qlink": "https://www.quora.com/Which-RNA-base-bonds-with-adenine",
+        "qtext": "Which RNA base bonds with adenine?"
+    },
+    "6181393": {
+        "answer": {
+            "aepoch": 1449980108391495,
+            "aid": 17758893,
+            "alink": "https://www.quora.com/Is-it-possible-to-insert-inheritable-traits-into-human-dna/answer/Thomas-J-Card/share?=1",
+            "atext": "<span class=\"ui_qtext_rendered_qtext\">Yes, it is known as germline gene modification(GLGM). This category of gene modification covers any genetic alteration that is inheritable. There are several techniques, from the method you use to insert/alter genes to the cells and development stage that you target. For example you can use CRISPR Cas9 or harmless/non replicating viruses. You can target a parents egg cells or spermatozoa/primordial germ cells. However, the method that is more likely is altering ones embryos. Human embryos have been successfully modified with the insertion of a GFP gene by researchers at Cornell. The embryo was then destroyed as governed. To my knowledge this was the first time a human embryo was genetically modified and I am in aware of any developments since. Because the gene is fully incorporated into the embryo, all of its cells there on will contain the inserted gene, which includes it's germ cells. As such, it is an inheritable gene insertion.</span>"
+        },
+        "qepoch": null,
+        "qlink": "https://www.quora.com/Is-it-possible-to-insert-inheritable-traits-into-human-dna",
+        "qtext": "Is it possible to insert inheritable traits into human dna?"
+    },
+    "6181818": {
+        "answer": {
+            "aepoch": 1449977834180184,
+            "aid": 17758339,
+            "alink": "https://www.quora.com/Is-there-a-material-that-absorbs-light-but-doesnt-let-it-out/answer/Thomas-J-Card/share?=1",
+            "atext": "<span class=\"ui_qtext_rendered_qtext\">I'm short on time, so I'm gonna give a short answer that you or some one else can research and elaborate upon. I have read that under the right orientation carbon nanotubes will absorb an unprecedented amount of the visible spectrum. They are looking to use this in telescopes and solar panels.<br/><br/>I also saw this a couple days ago: <span class=\"qlink_container\"><a class=\"external_link\" data-qt-tooltip=\"aps.org\" href=\"http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.115.215501\" onclick=\"return Q.openUrl(this, 17758339);\" rel=\"noopener nofollow\" target=\"_blank\">http://journals.aps.org/prl/abst...</a></span> <br/>I believe it is closer to what you are looking for. But I haven't read it yet, so I can't summarize it.</span>"
+        },
+        "qepoch": null,
+        "qlink": "https://www.quora.com/Is-there-a-material-that-absorbs-light-but-doesnt-let-it-out",
+        "qtext": "Is there a material that absorbs light but doesn't let it out?"
+    },
+    "6202812": {
+        "answer": {
+            "aepoch": 1450142767486448,
+            "aid": 17807205,
+            "alink": "https://www.quora.com/How-many-Bases-can-be-found-in-RNA/answer/Thomas-J-Card/share?=1",
+            "atext": "<span class=\"ui_qtext_rendered_qtext\">While most only acknowledge the standard four bases\u2014adenine, uricile, guanine, cytosine, the technical answer is much more complicated. As it turns out, even RNA is methylated and on top of this there are many more modifications that can take place. So, while those four are the foundation, there is probably a couple hundred unique structural deviants.<br/><br/>Here is a good database that contains the current count: <span class=\"qlink_container\"><a class=\"external_link\" href=\"http://mods.rna.albany.edu/mods/\" onclick=\"return Q.openUrl(this, 17807205);\" rel=\"noopener nofollow\" target=\"_blank\">http://mods.rna.albany.edu/mods/</a></span></span>"
+        },
+        "qepoch": null,
+        "qlink": "https://www.quora.com/How-many-Bases-can-be-found-in-RNA",
+        "qtext": "How many Bases can be found in RNA?"
+    },
+    "6229594": {
+        "answer": null,
+        "qepoch": 1450242000,
+        "qlink": "https://www.quora.com/What-is-a-non-radioactive-method-of-doing-Sanger-Sequencing-is-it-cheap",
+        "qtext": "What is a non-radioactive method of doing Sanger Sequencing? (is it chea..."
+    },
+    "6229621": {
+        "answer": {
+            "aepoch": 1450424778724127,
+            "aid": 17894043,
+            "alink": "https://www.quora.com/How-do-I-make-a-VR-app/answer/Thomas-J-Card/share?=1",
+            "atext": "<span class=\"ui_qtext_rendered_qtext\"><p class=\"ui_qtext_para\">Unreal Engine 4 is a pretty well rounded system. It should support you mobile development background and has recently become compatible with VR, including oculus. </p></span>"
+        },
+        "qepoch": null,
+        "qlink": "https://www.quora.com/How-do-I-make-a-VR-app",
+        "qtext": "How do I make a VR app?"
+    },
+    "6252115": {
+        "answer": {
+            "aepoch": 1450593863392105,
+            "aid": 17938833,
+            "alink": "https://www.quora.com/Whats-a-good-introductory-book-on-how-to-start-yoyoing/answer/Thomas-J-Card/share?=1",
+            "atext": "<span class=\"ui_qtext_rendered_qtext\"><p class=\"ui_qtext_para\">I do not know about books. However, there is a website called <span class=\"qlink_container\"><a class=\"external_link\" data-qt-tooltip=\"yoyoexpert.com\" href=\"http://yoyoexpert.com\" onclick=\"return Q.openUrl(this, 17938833);\" rel=\"noopener nofollow\" target=\"_blank\">yoyoexpert.com</a></span> with plenty of videos and a very helpful forum. The videos start out very basic and get very advance, it is how I learned. You can also find plenty of information on there about getting a quality starter yoyo. I haven't been on the site recently, but I'm still quite fond of it. </p></span>"
+        },
+        "qepoch": null,
+        "qlink": "https://www.quora.com/Whats-a-good-introductory-book-on-how-to-start-yoyoing",
+        "qtext": "What's a good introductory book on how to start yoyoing?"
+    },
+    "6308854": {
+        "answer": {
+            "aepoch": 1450974273995423,
+            "aid": 18055451,
+            "alink": "https://www.quora.com/Besides-neuroscience-what-other-fields-should-I-go-into-to-create-full-sensory-immersion-virtual-reality-The-game-would-be-like-real-life/answer/Thomas-J-Card/share?=1",
+            "atext": "<span class=\"ui_qtext_rendered_qtext\"><p class=\"ui_qtext_para\">In order to create a fully immersive VR video game via a brain machine interface, there a couple of fields to involve in this endeavor. As you have mentioned neuroscience is valuable as it provides the background on neural networks and molecular pathways. Computational neuroscience is also valuable for understanding how the individuals brain works and how the sensory inputs from the video game will be interpreted by the brain.</p><p class=\"ui_qtext_para\">Perhaps the most significant part is the engineers. The particular feilds will vary depending on how you plan to build your machine interface. However, at the bare minimum it will involve chemical, electrical, and biomedical engineers. These are the people who will take what the neuroscientists discover and scale it up for medical and commercial use. (It's worth noting that the engineers will also be involved or responsible for the discovery of the method, it's not going to a one person job).</p><p class=\"ui_qtext_para\">Lastly you require computer scientist and video game developers to make the brain interface compatible with a game engine. Then someone will build an actual game. </p><p class=\"ui_qtext_para\">So, if you plan on getting involved in this process there are multiple points to join in. Each stage will continue to advance this technology, however, the engineers will be involved in building and testing the\u00a0 different technologies. That's where you have the most freedom and best chance to participate. </p></span>"
+        },
+        "qepoch": null,
+        "qlink": "https://www.quora.com/Besides-neuroscience-what-other-fields-should-I-go-into-to-create-full-sensory-immersion-virtual-reality-The-game-would-be-like-real-life",
+        "qtext": "Besides neuroscience, what other fields should I go into, to create full..."
+    },
+    "11450346": {
+        "answer": null,
+        "qepoch": 1480568400,
+        "qlink": "https://www.quora.com/Questions-about-spin",
+        "qtext": "Questions about spin:?"
+    },
+    "11450518": {
+        "answer": {
+            "aepoch": 1480855022886719,
+            "aid": 31864291,
+            "alink": "https://www.quora.com/Does-spin-have-spatial-orientation-How-does-this-relate-to-the-orientation-of-the-magnetic-moment/answer/Thomas-J-Card/share?=1",
+            "atext": "<span class=\"ui_qtext_rendered_qtext\"><p class=\"ui_qtext_para\">Verna Nadic, thank you for the answer. That is true, I also found in my own research that spin and phase don't have a true spacial orientation, ie. they are intrinsic.</p><p class=\"ui_qtext_para\">However, for the purposes of NMR and MRI their representation as a Bloch Vector (in Hilbert space) is \u201chomomorphic\u201d to our 3D space(1,2,3). In other words, the axes of the Bloch Sphere map onto our physical space. While the Z axis maps to the main magnetic field, the azimuthal angle arbitrarily maps the the xy-plane(1). This mapping holds true for MRI/NMR, though it doesn't necessarily hold for all 2-level quantum systems(3).</p><ol><li><span class=\"qlink_container\"><a href=\"/How-do-I-interpret-a-Bloch-sphere-as-seen-in-MRI-NMR-literature/answer/Jeffrey-Brender\">Jeffrey Brender's answer to How do I interpret a Bloch sphere as seen in MRI/NMR literature?</a></span>-see comments</li><li>\"<span class=\"qlink_container\"><a class=\"external_link\" data-qt-tooltip=\"youtube.com\" href=\"https://www.youtube.com/watch?v=hnb9hYmHii4\" onclick=\"return Q.openUrl(this, 31864291);\" rel=\"noopener nofollow\" target=\"_blank\">UNM Phys 531 2011 Lec19 Bloch Sphere Pseudo spin picture of two level atoms and magnetic resona</a></span>\"</li><li>\"<span class=\"qlink_container\"><a class=\"external_link\" data-qt-tooltip=\"youtube.com\" href=\"https://www.youtube.com/watch?v=sgmy3nfYfO4\" onclick=\"return Q.openUrl(this, 31864291);\" rel=\"noopener nofollow\" target=\"_blank\">Bloch sphere lecture</a></span>\"</li></ol></span>"
+        },
+        "qepoch": 1480568400,
+        "qlink": "https://www.quora.com/Does-spin-have-spatial-orientation-How-does-this-relate-to-the-orientation-of-the-magnetic-moment",
+        "qtext": "Does spin have spatial orientation? How does this relate to the orientat..."
+    },
+    "11452844": {
+        "answer": null,
+        "qepoch": 1480568400,
+        "qlink": "https://www.quora.com/How-do-I-interpret-a-Bloch-sphere-as-seen-in-MRI-NMR-literature",
+        "qtext": "How do I interpret a Bloch sphere as seen in MRI/NMR literature?"
+    },
+    "11533197": {
+        "answer": null,
+        "qepoch": 1481000400,
+        "qlink": "https://www.quora.com/What-age-do-you-recommend-one-starts-investing-what-is-too-young",
+        "qtext": "What age do you recommend one starts investing (what is too young)?"
+    },
+    "11533312": {
+        "answer": null,
+        "qepoch": 1481000400,
+        "qlink": "https://www.quora.com/How-do-you-go-about-gaining-peoples-trust-in-a-new-business-venture",
+        "qtext": "How do you go about gaining peoples trust in a new business venture?"
+    },
+    "11533481": {
+        "answer": null,
+        "qepoch": 1481000400,
+        "qlink": "https://www.quora.com/You-have-successfully-written-books-invested-and-learned-many-things-This-requires-great-research-tactics-What-is-your-approach-to-research",
+        "qtext": "You have successfully written books, invested, and learned many things. ..."
+    },
+    "11533653": {
+        "answer": null,
+        "qepoch": 1481000400,
+        "qlink": "https://www.quora.com/Who-do-you-know-whether-an-idea-is-worth-chasing",
+        "qtext": "Who do you know whether an idea is worth chasing?"
+    },
+    "11533665": {
+        "answer": null,
+        "qepoch": 1481000400,
+        "qlink": "https://www.quora.com/How-did-you-schedule-for-this-session",
+        "qtext": "How did you schedule for this session?"
+    },
+    "11533723": {
+        "answer": null,
+        "qepoch": 1481000400,
+        "qlink": "https://www.quora.com/Does-the-positive-or-negative-value-of-the-gyromagnetic-ratio-affect-what-circularly-polarized-wave-L-R-is-resonant-in-NMR-and-MRI",
+        "qtext": "Does the positive or negative value of the gyromagnetic ratio affect wha..."
+    },
+    "13959425": {
+        "answer": null,
+        "qepoch": 1490673600,
+        "qlink": "https://www.quora.com/Is-it-possible-to-spatially-ID-the-product-of-a-chemical-reaction-in-a-tuned-MRI",
+        "qtext": "Is it possible to spatially ID the product of a chemical reaction in a t..."
+    },
+    "13960498": {
+        "answer": null,
+        "qepoch": 1490760000,
+        "qlink": "https://www.quora.com/What-program-and-analysis-can-assess-binding-affinity-of-a-drug-to-specific-proteins",
+        "qtext": "What program and analysis can assess binding affinity of a drug to speci..."
+    },
+    "13961492": {
+        "answer": {
+            "aepoch": 1490885927342869,
+            "aid": 40475999,
+            "alink": "https://www.quora.com/Is-the-signal-an-MRI-receives-either-from-RF-photons-virtual-photons-or-induction-via-flipping-magnetic-moments/answer/Thomas-J-Card/share?=1",
+            "atext": "<span class=\"ui_qtext_rendered_qtext\"><p class=\"ui_qtext_para\">While I am not an expert, MRI is a passion of mine. I am familiar with this \u2018controversy\u2019 you are referencing, though to me, it seems more of a misnomer these days.</p><p class=\"ui_qtext_para\">QED is above me at the moment, so you will likely have to wait for a more rigorous answer to help you. I have some related links that might be able to guid you, perhaps you can convince or disprove yourself.</p><p class=\"ui_qtext_para\">In order of rigor:<br/><span class=\"qlink_container\"><a class=\"external_link\" data-qt-tooltip=\"mriquestions.com\" href=\"http://mriquestions.com/not-radio-waves.html\" onclick=\"return Q.openUrl(this, 40475999);\" rel=\"noopener nofollow\" target=\"_blank\">Nature of MR signal</a></span> (references at the bottom)<br/><span class=\"qlink_container\"><a class=\"external_link\" data-qt-tooltip=\"shu.ac.uk\" href=\"http://teaching.shu.ac.uk/hwb/chemistry/tutorials/molspec/nmr1.htm\" onclick=\"return Q.openUrl(this, 40475999);\" rel=\"noopener nofollow\" target=\"_blank\">NMR Spectroscopy - Theory</a></span> (read \u201crelaxation process\u201d)<br/><span class=\"qlink_container\"><a class=\"external_link\" data-qt-tooltip=\"wikipedia.org\" href=\"https://en.wikipedia.org/wiki/Radiofrequency_coil\" onclick=\"return Q.openUrl(this, 40475999);\" rel=\"noopener nofollow\" target=\"_blank\">Radiofrequency coil - Wikipedia</a></span> (Briefly acknowledged in 4th paragraph)</p><p class=\"ui_qtext_para\">I think the first two links should be sufficient to clarify the matter.<br/>Best of luck!</p></span>"
+        },
+        "qepoch": null,
+        "qlink": "https://www.quora.com/Is-the-signal-an-MRI-receives-either-from-RF-photons-virtual-photons-or-induction-via-flipping-magnetic-moments",
+        "qtext": "Is the signal an MRI receives either from RF photons, virtual photons, o..."
+    },
+    "13961915": {
+        "answer": null,
+        "qepoch": 1490760000,
+        "qlink": "https://www.quora.com/How-does-one-outsource-research",
+        "qtext": "How does one outsource research?"
+    },
+    "15825432": {
+        "answer": {
+            "aepoch": 1496689966345810,
+            "aid": 46620825,
+            "alink": "https://www.quora.com/Where-can-I-get-stuff-3D-printed-online/answer/Thomas-J-Card/share?=1",
+            "atext": "<span class=\"ui_qtext_rendered_qtext\"><p class=\"ui_qtext_para\">Option 1 - Learn a modeling software: You might as well learn now because this is unlikely to be the last time you need something designed. SketchUp and Autodesk products are a good place to start as they have lots of documentation and easy UI.</p><p class=\"ui_qtext_para\"><b>Option 2</b> - Find a modeler: there are many 3D object banks, you can find and contact people who have uploaded objects of similar design or complexity. Ask some people for some quotes and find the best price. As long as its not artistic or overly complex, it shouldn\u2019t really matter who you choose. (This is why many include contacts and websites)</p><p class=\"ui_qtext_para\">Option 3 - Find a design company: They are out there in various sizes. However, I am sure its not cheap as you are competing against companies that outsource design (both artistic and technical).</p><p class=\"ui_qtext_para\">Option 4 - Engineering consultant: I assume you are a hobbyist, so this would be overkill. However, I don\u2019t want to make assumptions. Depending on the firm you use, they can help you outsource and manage the design of your \u201cstuff\u201d.</p><p class=\"ui_qtext_para\">Final thoughts: If you are not in a rush, go with Option 1 as it will serve you well in the future. Option 2 if your a hobbyist in a rush. Option 3/4 if you are in a rush to get something complex done. As for printing, there are hubs. That is all anyone has mentioned so far, so I\u2019m sure your well informed by now.</p></span>"
+        },
+        "qepoch": null,
+        "qlink": "https://www.quora.com/Where-can-I-get-stuff-3D-printed-online",
+        "qtext": "Where can I get stuff 3D printed online?"
+    },
+    "16448162": {
+        "answer": null,
+        "qepoch": 1498190400,
+        "qlink": "https://www.quora.com/How-do-chemical-shifts-compare-between-different-nuclear-polarizations",
+        "qtext": "How do chemical shifts compare between different nuclear polarizations?"
+    },
+    "16448987": {
+        "answer": null,
+        "qepoch": 1498190400,
+        "qlink": "https://www.quora.com/Does-epigenetic-expression-cause-autoimmune-diseases",
+        "qtext": "Does epigenetic expression cause autoimmune diseases?"
+    },
+    "16449069": {
+        "answer": null,
+        "qepoch": 1498190400,
+        "qlink": "https://www.quora.com/Is-our-ability-to-localize-sound-in-3D-using-pinna-acquired-or-instinctual",
+        "qtext": "Is our ability to localize sound in 3D (using pinna) acquired or instinc..."
+    },
+    "16450524": {
+        "answer": null,
+        "qepoch": 1498190400,
+        "qlink": "https://www.quora.com/What-\u201cModel-Lipid-Bilayer\u201d-is-most-suitable-for-high-through-put-screening-of-voltage-gated-proteins",
+        "qtext": "What \u201cModel Lipid Bilayer\u201d is most suitable for high through put screeni..."
+    },
+    "21776553": {
+        "answer": null,
+        "qepoch": 1513227600,
+        "qlink": "https://www.quora.com/How-do-I-get-started-in-MD-simulation-of-voltage-sensitive-proteins",
+        "qtext": "How do I get started in MD simulation of voltage sensitive proteins?"
+    },
+    "21776677": {
+        "answer": null,
+        "qepoch": 1513227600,
+        "qlink": "https://www.quora.com/Have-you-come-across-any-cheap-DIY-model-membranes-for-high-throughput-screening-of-ion-channels",
+        "qtext": "Have you come across any cheap DIY model membranes for high throughput s..."
+    },
+    "25615221": {
+        "answer": {
+            "aepoch": 1521724680463304,
+            "aid": 77055740,
+            "alink": "https://www.quora.com/Testing-data-serialization-embed-Id-etc-please-ignore-this/answer/Thomas-J-Card/share?=1",
+            "atext": "<span class=\"ui_qtext_rendered_qtext\"><p class=\"ui_qtext_para\">Updated answer: test answer checking for embed updates with edits</p></span>"
+        },
+        "qepoch": 1521691200,
+        "qlink": "https://www.quora.com/Testing-data-serialization-embed-Id-etc-please-ignore-this",
+        "qtext": "Testing data serialization, embed Id, etc. please ignore this\u2026?"
+    }
+}

@@ -1,0 +1,250 @@
+{% extends "tclab_base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-aboutpage{% endblock %}
+
+{% block extra_js %}
+	{{ block.super }}
+	<!-- FontAwesome (FA)-->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block extra_css %}
+	{{ block.super }}
+	<!--Move to css file-->
+	<style type="text/css">
+	 svg{
+	  color: white;
+
+	  -webkit-transition: color .5s; /* Safari */
+      transition: color .5s;
+	 }
+
+	svg:hover {
+		color: red;
+	    text-decoration: none;
+
+	    -webkit-transition: color .5s; /* Safari */
+    	transition: color .5s;
+	}
+
+	.RG{
+		color: white;
+		text-decoration: none;
+
+		-webkit-transition: color .5s;
+        transition: color .5s;
+	}
+
+	.RG:hover {
+		color: red;
+	    text-decoration: none;
+
+	    -webkit-transition: color .5s;
+    	transition: color .5s;
+	}
+
+
+	.card-body#webcard{
+		float: left;
+        width: auto;
+    }
+
+
+	#netcard.card-text {
+	    height: 100px;
+	    overflow: hidden;
+	}
+
+	#netcard {
+		width:100%;
+		height: auto;
+		display: inline-block;
+		border-radius: .75rem;
+		overflow: hidden;
+	}
+
+	.card#netcard img{
+		float: left;
+		width: 30%;
+		height: auto;
+	}
+
+	.card-body#netcard{
+		float: left;
+        width: 70%;
+    }
+
+    /*slow zoom*/
+	.card#netcard:hover img{
+		transform: scale(1.05);
+		transition: all 1s ease 0s;
+	}
+	/*slow return*/
+	.card#netcard img{
+		transition: all 1s ease 0s;
+	}
+	</style>
+{% endblock %}
+
+
+
+{% block middle %}
+	<br>
+	<div class="row">
+		<!--Change to loop. v-for maybe. extend sites2 to include links-->
+		<div class="col-sm-5 text-center">
+	        {% image page.image original class="img-fluid img-thumbnail" id="aboutimg"%}
+
+	        <a href="https://twitter.com/CardTo5" class="fab fa-twitter"></a>
+
+	        <a href="https://www.quora.com/profile/Thomas-J-Card" class="fab fa-quora"></a>
+
+	        <a href="https://www.reddit.com/user/cardto5/" class="fab fa-reddit-alien"></a>
+
+	        <a href="https://www.youtube.com/channel/UCRySbgo-3sE3PWRkaLBazyw" class="fab fa-youtube"></a>
+
+	        <a href="https://www.linkedin.com/in/thomas-j-card-tcard2-072443129/" class="fab fa-linkedin-in"></a>
+
+	        <a class="RG" href="https://www.researchgate.net/profile/Thomas_Card">R<sup>G</sup></a>
+
+	        <a href="#" class="fab fa-trello"></a>
+
+	        <a href="https://drive.google.com/open?id=173v90RKR2NPH8ju8k0CkfUDr3Yq9AkGU" class="fab fa-google"></a>
+
+	        <a href="https://drive.google.com/open?id=173v90RKR2NPH8ju8k0CkfUDr3Yq9AkGU" class="fab fa-google-drive"></a><!--Broken...-->
+
+	        <a href="https://github.com/tcardlab" class="fab fa-github-alt"></a>
+
+	        <a class="btn btn-outline-light" style="width:100%;" href="mailto:TCardLAB@gmail.com">Send Email</a>
+		</div>
+
+
+		<div class="col-sm-7 text-center">
+			<h1 class="text-sm-left" >{{page.name}}</h1>
+			{{page.bio|richtext}}
+		</div>
+	</div>
+
+	<hr style="color:black; font-size:5rem;">
+	<h3>Uses:</h3>
+	<div class="row">
+		<div class="d-flex mx-auto">
+		{% for block in page.uses %}
+		    {% if block.block_type == 'paragraph'%}
+		        <div class="card" id="mycard"style="padding:15px; margin:10;">
+		            {% include_block block %}
+		        </div>
+		    {% endif %}
+		{% endfor %}
+		</div>
+
+		<!--Make include(take– site list+paths): For each website, create tab/content-->
+		<div class="card" id="tabs2">
+			<!--Content Tabs-->
+			<div class="card-header" id="blogprev">
+			    <ul class="nav nav-tabs card-header-tabs" id="webTab" role="tablist">
+				    <li class="nav-item" id="all-tab">
+				        <a class="RG nav-link active" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="false">All</a>
+				    </li>
+
+				    <!--itterates through FontAwesome Icons(sites2)-->
+				    <li v-for="(item, index) in sites2">
+				      	<a class="nav-link" :id="index+'-tab'" data-toggle="tab" :href="'#'+index" role="tab" :aria-controls="index" aria-selected="false">
+				      		<i :class="'fab '+item" style=".nav-link.active.fab{color:red;}"></i>
+				      	</a>
+					</li>
+
+				    <li class="nav-item">
+				        <a class="nav-link RG" :id="sites2.length+'tab'" data-toggle="tab" :href="'#'+sites2.length" role="tab" :aria-controls="sites2.length" aria-selected="false">R<sup>G</sup></a>
+				    </li>
+			    </ul>
+			</div>
+
+
+		  	<!--Content Pains-->
+			<div class="tab-content" id="webTabContent">
+			  	<div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+			  		hi
+				</div>
+
+				<!--itterates through FontAwesome Icons(sites2)-->
+				<slot v-for="(item, index) in sites2">
+					<div class="tab-pane fade show" :id="index" role="tabpanel" :aria-labelledby="index+'-tab'">
+
+				  		
+				  	<!--Make include(take– json path): for each json element create a card-->
+						<div v-for="(value, key) in orderedTime" :key='key'>
+							<div class="card" style="border:2px solid #e6e6e6; margin:3px;"id="webcard">
+								<div class="card-header text-white" style="background-color: #b32400;">
+								    <h3> <strong>Quora</strong>
+								        <p class="float-right">[[key+1]]</p>
+								    </h3>
+								</div>
+
+							    <div class="card-body" id="webcard">
+							        <a class="h4" :href="value.link">
+							        [[value.qtext]]
+							        </a>
+							    </div>
+
+							    <div class="collapse" :id="key+'web'">
+							        <div class="card-body" v-if="value.answer!=null" v-html="value.answer.atext" id="webcard">
+							        </div>
+							    </div>
+
+							    <div class="card-footer text-muted" style="background-color: #e6e6e6;">
+							        [[value.time]]
+							        <!--type="button"-->
+							        <a class="float-right" data-toggle="collapse" v-bind:data-target="'#'+key+'web'" aria-expanded="false" :aria-controls="key+'web'" v-if="value.answer!=null"
+
+							        v-on:click="value.show = !value.show ? true : false">
+							        <!--i believe this could be: value.show = !value.show-->
+								        <i v-if="value.show == false">Show Answer</i>
+								        <i v-else>Hide Answer</i>
+								    </a>
+							    </div>
+
+							</div>
+						</div>
+
+
+					</div>
+				</slot>
+
+				<div class="tab-pane fade show" id="8" role="tabpanel" aria-labelledby="8-tab">
+			  		yup
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- front end filter -->
+	<script src="https://unpkg.com/vue"></script>
+	<!-- http get request -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<!-- for sorting epoch-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.core.min.js"></script>
+
+	<script type="text/javascript">
+		var app=new Vue({
+		    el: "#tabs2",
+		    delimiters: ['[[', ']]'],
+		    data:{
+		        results: [],
+		        sites2: ["fa-quora", "fa-reddit-alien", "fa-youtube", "fa-twitter", "fa-linkedin-in", "fa-trello", "fa-google-drive", "fa-github-alt"],
+		    },
+
+		    //cleanup getquora path, function, etc.
+		    created() {
+		        axios.get("getQuora2").then(response => {this.results = response.data})
+		    },
+		    
+		    computed: {
+			    orderedTime: function () {
+			        return _.sortBy(this.results, "epoch").reverse()
+			    },
+			},
+		});
+	</script>
+{% endblock %}

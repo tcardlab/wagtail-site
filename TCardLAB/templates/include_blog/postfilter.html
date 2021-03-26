@@ -1,0 +1,70 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<!-- front end filter -->
+<script src="https://unpkg.com/vue"></script>
+<!-- http get request (switch to axios?)-->
+<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.0"></script>
+<!-- pass variables through script -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+<div id="test">
+    <input type="text" id='find' placeholder="Find post..." v-model="search"/>
+    <div v-for="pages in filteredPages">
+        <span >
+            <img style="max-width:60px" src='https://i.stack.imgur.com/CE5lz.png' class="profile-pic" />
+        </span>
+        <a :href='pages.meta.html_url'>[[pages.title]]</a>
+    </div>
+    <!--see output [[pages]] -->
+    <!--[[pages]]-->
+</div>
+
+ 
+<!--endpoint = "{{endpoint}}" current="{{page.id}}"-->
+<script type="text/javascript" id="pass_vars" 
+endpoint = "{{endpoint}}" current="{{current}}">
+var endpoint = $('#pass_vars').attr("endpoint");
+var current = $('#pass_vars').attr("current");
+
+var app=new Vue({
+    el: "#test",
+    delimiters: ['[[', ']]'],
+    data: function() {
+            return {
+            search: '',
+            pages: []};
+    },
+
+    root: 'http://127.0.0.1:8000',
+
+    //get('/api/v2/pages')
+    methods: {
+        getPages: function () {
+            this.$http.get(endpoint+current).then(response => {this.pages = response.body.items;})
+        }
+    },
+
+    created: function () {
+        this.getPages();
+    },
+    
+    computed: {
+        filteredPages:function() {
+           var self=this
+           return this.pages.filter(function(test){return test.title.toLowerCase().indexOf(self.search.toLowerCase())>=0;});
+        }
+    },
+
+    });
+</script>
+
+<!--Smooth scroll on click via "find" id-->
+<script type="text/javascript">
+    document.querySelector('#find').addEventListener('focus', function () {
+      window.scroll({
+        top: this.offsetTop, //-100
+        left: 0,
+        behavior: 'smooth'
+      });
+    });
+</script>

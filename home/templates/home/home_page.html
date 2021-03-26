@@ -1,0 +1,41 @@
+{% extends "tclab_base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+
+{% block left %}
+
+	Ad space
+{% endblock %}
+
+
+{% block middle %}
+	<!-- Introduction -->
+	<br>
+	{{ page.intro|richtext }}
+	<hr>
+
+	<!-- Project Showcase -->
+	{{ page.showcase_title|richtext }}
+
+	<!-- Secondary Project Cards -->
+	<div class="row" id="showcaserow" style = "padding-left:15px; padding-right:15px;">	
+		{% include "include_tclab/streamfield.html" with content=self.cards %}
+	</div>
+
+	<!--
+		Inert Button to link to other projects
+	-->
+
+	<!-- Blog Previews -->
+	{% include "include_tclab/blogpreview.html" %}
+		<!--get zabout unused prev. card-->
+{% endblock %}
+
+
+{% block right %}
+	<p style="float:right;"> 
+		Ad space 
+	</p>
+{% endblock %}

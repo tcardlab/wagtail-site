@@ -1,0 +1,319 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block body_class %}template-searchresults{% endblock %}
+
+{% block title %}Search{% endblock %}
+
+
+{% block content %}
+    <!-- Javascript imports: !!!change to include!!! -->
+    {% block extra_js %}
+        {{ block.super }}
+        <!-- Vue.js Import(CDN) -->
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    {% endblock %}
+
+    <h1>Search</h1>
+
+    <form action="{% url 'search' %}" method="get">
+        <input type="text" name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
+        <input type="submit" value="Search" class="button">
+    </form>
+
+    {% if search_results %}
+        <ul>
+            {% for result in search_results %}
+                <li>
+                    <h4><a href="{% pageurl result %}">{{ result }}</a></h4>
+                    {% if result.search_description %}
+                        {{ result.search_description }}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+
+        {% if search_results.has_previous %}
+            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        {% if search_results.has_next %}
+            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>
+        {% endif %}
+    {% elif search_query %}
+        No results found
+    {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://unpkg.com/vue"></script>
+    <div id="test">
+      Filter: <input type="text" v-model="search"/>
+         
+      <div v-for="pages in filteredPages">
+       <span><img style="max-width:60px" :src="pages.profile_pic"       class="profile-pic" /></span>
+       <span>[[pages.name]]</span>
+      </div>
+    </div>
+
+
+    <script type="text/javascript">
+    var app=new Vue({
+        el: "#test",
+        delimiters: ['[[', ']]'],
+        data: function(){
+                return {
+                search: '',
+                pages: [
+                  { id: '1', name: 'Jhon Snow', profile_pic: 'https://i.stack.imgur.com/CE5lz.png'},
+                  { id: '2', name: 'Deanerys Targarian', profile_pic: 'https://i.stack.imgur.com/CE5lz.png'},
+                  { id: '3', name: 'Jaime Lanister', profile_pic: 'https://i.stack.imgur.com/CE5lz.png'},
+                  { id: '4', name: 'Tyron Lanister', profile_pic: 'https://i.stack.imgur.com/CE5lz.png'}
+                ]};
+        },
+        computed:
+        {
+            filteredPages:function()
+            {
+                 var self=this;
+               return this.pages.filter(function(test){return test.title.toLowerCase().indexOf(self.search.toLowerCase())>=0;});
+            }
+        }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+    
+    <div id="app1">
+        [[ message ]]
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            delimiters: ['[[', ']]'],
+
+            el: '#app1',
+            data: {
+                message: 'Hello Vue!'
+            }
+        })
+    </script>
+
+
+
+    <script src="https://unpkg.com/vue"></script>
+    <div id="main">
+      Filter: <input type="text" v-model="search"/>
+
+      <div v-for="customer in filteredCustomers">
+       <span><img style="max-width:60px" :src="customer.profile_pic"       class="profile-pic" /></span>
+       <span>[[customer.name]]</span>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    var app=new Vue({
+        el: "#main",
+        delimiters: ['[[', ']]'],
+        data: function(){
+                return {
+                search: '',
+                customers: [
+                  { id: '1', name: 'Jon Snow', profile_pic: 'https://i.stack.imgur.com/CE5lz.png'},
+                  { id: '2', name: 'Deanerys Targarian', profile_pic: 'https://i.stack.imgur.com/CE5lz.png'},
+                  { id: '3', name: 'Jaime Lanister', profile_pic: 'https://i.stack.imgur.com/CE5lz.png'},
+                  { id: '4', name: 'Tyron Lanister', profile_pic: 'https://i.stack.imgur.com/CE5lz.png'}
+                ]};
+        },
+        computed:
+        {
+            filteredCustomers:function()
+            {
+                 var self=this;
+               return this.customers.filter(function(cust){return cust.name.toLowerCase().indexOf(self.search.toLowerCase())>=0;});
+               //return this.customers;
+            }
+        }
+        });
+    </script>
+
+    <script src="https://unpkg.com/vue"></script>
+    <div id="test">
+      Filter: <input type="text" v-model="search"/>
+         
+      <div v-for="pages in filteredPages">
+       <span><img style="max-width:60px" :src="pages.profile_pic"       class="profile-pic" /></span>
+       <span>[[pages.name]]</span>
+      </div>
+    </div>
+
+
+    <script type="text/javascript">
+    var app=new Vue({
+        el: "#test",
+        delimiters: ['[[', ']]'],
+        data: function(){
+                return {
+                search: '',
+                pages: [
+                  { id: '1', name: 'Jon Snow', profile_pic: 'https://i.stack.imgur.com/CE5lz.png'},
+                  { id: '2', name: 'Deanerys Targarian', profile_pic: 'https://i.stack.imgur.com/CE5lz.png'},
+                  { id: '3', name: 'Jaime Lanister', profile_pic: 'https://i.stack.imgur.com/CE5lz.png'},
+                  { id: '4', name: 'Tyron Lanister', profile_pic: 'https://i.stack.imgur.com/CE5lz.png'}
+                ]};
+        },
+
+        methods: {
+            getPages: function () {
+                this.$http.get('http://127.0.0.1:8000/api/v2/pages/').then(response => {
+                             this.pages = response.data;
+                          })
+            }
+        },
+
+        computed:
+        {
+            filteredPages:function()
+            {
+                 var self=this;
+               return this.pages.filter(function(test){return test.name.toLowerCase().indexOf(self.search.toLowerCase())>=0;});
+            }
+        }
+        });
+    </script>
+    
+
+
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.0"></script>
+
+    <div id="test5">
+        <ul>
+            <li v-for="print_test in pages">
+                <p> [[print_test]]</p>
+            </li>
+        </ul>
+
+
+        <!-- Filter: <input type="text" v-model="search"/>     
+        <div v-for="pages in filteredPages">
+            <span><img style="max-width:60px" :src="pages.profile_pic"       class="profile-pic" /></span>
+            <span>[[pages.title]]</span>
+        </div> -->
+    </div>
+
+
+    <script type="text/javascript">
+    var app=new Vue({
+        el: "#test5",
+        delimiters: ['[[', ']]'],
+        data: function(){
+                return {
+                search: '',
+                pages: [
+                  { id: '1', title: 'Jon Snow'},
+                  { id: '2', title: 'Deanerys Targarian'},
+                  { id: '3', title: 'Jaime Lanister'},
+                  { id: '4', title: 'Tyron Lanister'}
+                ]};
+        },
+
+        // http: {
+        //     root: 'http://127.0.0.1:8000/',
+        //     headers: {
+        //         Authorization: 'wagtailapi'
+        //     }
+        // },
+
+        methods: {
+            getPages: function () {
+                this.$http.get('http://127.0.0.1:8000/api/v2/pages/').then(response => {
+                             this.pages = response.data;
+                          })
+
+                // .then(function (data) {
+                // if (status == 200) {
+                //     this.pages = data;
+                //     console.log(hi);
+                //  }   
+                // })
+            }
+        },
+
+        mounted: function () {
+            this.getPages();
+        }
+
+        // computed:
+        // {
+        //     filteredPages:function()
+        //     {
+        //         var self=this;
+        //         return this.pages.filter(function(test){return test.title.toLowerCase().indexOf(self.search.toLowerCase())>=0;});
+        //     }
+        // }
+        });
+    </script>
+
+
+
+    <div id="test6">
+        <p> [[print_test]]</p>
+    </div>
+
+
+    <script type="text/javascript">
+    var app=new Vue({
+        el: '#test6',
+
+        data: {
+            pages: []
+        },
+
+        created: function () {
+            this.fetchData();
+        },        
+
+        methods: {
+            fetchData: function () {
+                this.$http.get('http://127.0.0.1:8000/api/v2/pages/')
+                          .then(response => {
+                             this.pages = response.data;
+                             this.pages = response.json();
+                          })
+            }
+        }
+
+    });
+    </script>
+    
+
+{% endblock %}
+

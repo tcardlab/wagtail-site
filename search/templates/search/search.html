@@ -1,0 +1,156 @@
+{% extends "tclab_base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block body_class %}template-searchresults{% endblock %}
+
+{% block title %}Search{% endblock %}
+
+
+{% block middle %}
+    <!-- Javascript imports: !!!change to include!!! -->
+    <!--causes drop down to break. be carefule w/ these-->
+    {% comment %}  
+    {% block extra_js %}
+        {{ block.super }}
+        <!-- Vue.js Import(CDN) -->
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    {% endblock %}
+    {% endcomment %}
+
+    <h1>Search</h1>
+
+    <form action="{% url 'search' %}" method="get">
+        <input type="text" name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
+        <input type="submit" value="Search" class="button">
+    </form>
+
+    {% if search_results %}
+        <ul>
+            {% for result in search_results %}
+                <li>
+                    <h4><a href="{% pageurl result %}">{{ result }}</a></h4>
+                    {% if result.search_description %}
+                        {{ result.search_description }}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+
+        {% if search_results.has_previous %}
+            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        {% if search_results.has_next %}
+            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>
+        {% endif %}
+    {% elif search_query %}
+        No results found
+    {% endif %}
+
+
+
+
+
+<!--
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
+
+<div id="app">
+    <p><router-link to="/page1">Go to Page 1</router-link></p>
+    <p><router-link to="/page2">Go to Page 2</router-link></p>
+    <p><router-view></router-view></p>
+</div>
+
+<script>
+    var PageOneComponent = Vue.component('comp2',{
+        template: '<p>Component One</p>'
+    })
+    var PageTwoComponent = Vue.component('comp1',{
+        template: '<p>Component Two</p>'
+    })
+
+    const routes = [
+        {path: '/page1', component: PageOneComponent},
+        {path: '/page2', component: PageTwoComponent}
+    ]
+
+    const router = new VueRouter({
+        routes
+    })
+
+    var app = new Vue({
+        router
+    }).$mount('#app')
+</script>
+-->
+
+
+
+
+<div id="test">
+    [[results]]
+</div>
+
+<!-- front end filter -->
+<script src="https://unpkg.com/vue"></script>
+<!-- http get request (switch to axios?)-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!-- pass variables through script -->
+<!--<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>-->
+
+<!--
+<script type="text/javascript" id="pass_vars" 
+endpoint = "{{endpoint}}" current="{{current}}">
+var app=new Vue({
+    el: "#test",
+    delimiters: ['[[', ']]'],
+    data: {
+        results: []
+    },
+
+    //'http://localhost:8000/static/a.json' if file is in static folder, no url path needed
+    //"http://localhost:8000/getQuora/" url path in main urls.py and file in search
+    //"http://localhost:8000/search/getQuora/" for urls.py in view and file in view
+    mounted() {
+        axios.get("http://localhost:8000/search/getQuora/").then(response => {this.results = response.data})
+    },
+});
+</script>
+-->
+
+{% endblock %}
+
+
+
+{#
+<div id="test">
+    [[results]]
+</div>
+
+<!-- front end filter -->
+<script src="https://unpkg.com/vue"></script>
+<!-- http get request (switch to axios?)-->
+<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.0"></script>
+<!-- pass variables through script -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" id="pass_vars" 
+endpoint = "{{endpoint}}" current="{{current}}">
+var endpoint = $('#pass_vars').attr("endpoint");
+var current = $('#pass_vars').attr("current");
+
+var app=new Vue({
+    el: "#test",
+    delimiters: ['[[', ']]'],
+    data: {
+        results: []
+    },
+
+    mounted() {
+        axios.get("https://jsonplaceholder.typicode.com/posts/1").then(response => {this.results = response})
+    },
+
+    }); 
+</script>
+#}

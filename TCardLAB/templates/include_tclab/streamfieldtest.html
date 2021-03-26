@@ -1,0 +1,11 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+
+{% for child in content %}
+	{% if child.block_type == 'cardblock' %}
+		{% image child.value.image width-1280 as theimage %}
+
+		{% include "include_tclab/card.html" with 
+		image={{ theimge.url }} heading={{ child.value.heading }} caption={{ child.value.caption|richtext }}  %}
+	{% endif %}
+{% endfor %}

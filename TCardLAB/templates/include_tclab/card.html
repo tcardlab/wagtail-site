@@ -1,0 +1,13 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<span class="card mb-3" id="mycard">
+	<a href="{{ page }}">
+	<img class="card-img-top" src="{{ image }}" alt="Card image cap"/>
+	<div class="card-body" >
+		<h5 class="card-title">{{heading}}</h5>
+		<p class="card-text d-none d-sm-block">
+			{{caption}}
+		</p>
+	</div>
+	</a>
+</span>

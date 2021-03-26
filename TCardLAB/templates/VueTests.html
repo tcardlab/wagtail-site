@@ -1,0 +1,57 @@
+<div id="app">
+    [[ message ]]
+
+    <template>
+        <ais-index
+        app-id="latency"
+        api-key="3d9875e51fbd20c7754e65422f7ce5e1"
+        index-name="bestbuy">
+
+        <ais-search-box> </ais-search-box>
+        <ais-results>
+          <template slot-scope="{ result }">
+            <h2><ais-highlight :result="result" attribute-name="name"> </ais-highlight>
+            </h2>
+          </template>
+        </ais-results>
+      </ais-index>
+    </template>
+</div>
+
+
+<!-- https://vuejs.org/v2/guide/installation.html -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<!-- https://vuex.vuejs.org/en/installation.html -->
+<script src="https://unpkg.com/vuex@2.0.0"></script>
+
+
+
+<!-- https://community.algolia.com/vue-instantsearch/getting-started/installing.html -->
+<script src="https://cdn.jsdelivr.net/npm/vue-instantsearch@1.4.0/dist/vue-instantsearch.js"></script>
+
+<!-- algolia-vue instantsearch -->
+<script>
+    var app = new Vue({
+        delimiters: ['[[', ']]'],
+
+        el: '#app',
+        data: {
+            message: 'Hello Vue!'
+        }
+    })
+</script>
+
+<!-- algolia-vue instantsearch: note must give credit to algolia 
+see here:https://www.algolia.com/pricing
+
+Tutorial:
+https://community.algolia.com/vue-instantsearch/getting-started/getting-started.html
+-->
+<script type="text/javascript">
+    Vue.use(InstantSearch);
+
+    new Vue({
+      el: '#app',
+      render: h => h(App)
+    });
+</script>

@@ -1,0 +1,140 @@
+/***Body Effects***/
+	body {
+	  font-family: 'Lora';
+	  background-color: #eeeeee;
+	  background-position: center;
+	  background-size: cover;
+	  overflow-x:hidden; /*prevents overflow from enlarging page*/
+	}
+
+	/*blur supreme container*/
+	body.modal-open .supreme-container{
+		transition: all 0.5s ease 0s;
+	    -webkit-filter: blur(2px);
+	    -moz-filter: blur(2px);
+	    -o-filter: blur(2px);
+	    -ms-filter: blur(2px);
+	    filter: blur(2px);
+	}
+
+/*** Content Area ***/
+	/* Large devices (large desktops, 768px and up) */
+	@media (min-width: 768px){
+		#myrow  {
+		background-image: url(images/bg1test2.png);
+		/*background-size: cover;*/
+		/*background-position: center;*/
+		}
+	}
+
+	#mycol  {
+	    background-color: #eeeeee;
+	    min-height: 500px
+		}
+
+	@media (max-width: 768px){
+		#maxmobile  {
+			width: 100%;
+			background-color: #eeeeee;
+		}
+	}
+
+/*** Project Showcase ***/
+	.tile#keytile::after {
+		  display: block;
+		  position: absolute;
+		  background-image: linear-gradient(rgba(220, 220, 220, 0.25), rgba(0, 0, 0, 0.7));
+		  margin-top: -250px;
+		  height: 250px;
+		  width: 100%;
+		  content: '';
+	}
+
+	@media (max-width: 575px){
+		.tile#keytile{
+			height: 150px;
+		}
+		.tile#keytile::after{
+			margin-top: -150px;
+			height: 150px;
+		}
+	}
+
+	.btn#hoverbtn{
+		transition: all 0.75s ease 0s;
+	    background: none;
+	    border: 1px solid #00a2ff;
+	    z-index: 100;
+	    color: white;
+	    min-height: 32px;
+	    max-height: 32px;
+	}
+
+	.btn:hover#hoverbtn{
+		transition: all 1s ease 0s;
+	    background: #00a2ff;
+	}
+
+	.btn:focus#hoverbtn{
+		box-shadow: none;
+	}
+
+	#mycard {
+		width:33%;
+		border-radius: .75rem;
+		overflow: hidden;
+
+		margin: 0 auto;
+	    float: none;
+	    margin-bottom: 10px;
+	}
+
+	/* https://stackoverflow.com/questions/39470438/creating-a-responsive-horizontal-content-thumbnail-with-bootstrap */
+	@media (max-width: 576px) {
+		#showcaserow {
+			-moz-box-orient: vertical;
+			-webkit-box-orient: vertical;
+			-webkit-flex-flow: column; 
+			-ms-flex-direction: column; 
+			flex-flow: column;
+		}
+
+		#mycard {
+			width:100%;
+			height: auto;
+			display: inline-block;
+
+			-moz-box-orient: vertical;
+			-webkit-box-orient: vertical;
+			-webkit-flex-flow: column; 
+			-ms-flex-direction: column; 
+			flex-flow: column;
+		}
+
+		.card#mycard img{
+			float: left;
+			width: 30%;
+			height: auto;
+		}
+
+		.card-body{
+			float: left;
+	        width: 70%;
+	        overflow: hidden;
+	        padding: 5px;
+		}
+	}
+
+	/*slow zoom*/
+	.card#mycard:hover img{
+		transform: scale(1.05);
+		transition: all 1s ease 0s;
+	}
+	/*slow return*/
+	.card#mycard img{
+		transition: all 1s ease 0s;
+	}
+
+	.card-body {padding: 15px;}
+
+

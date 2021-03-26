@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block extra_css %}
+	{{ block.super }}
+	<!-- My CSS Style import -->
+	<link rel="stylesheet" href="{% static 'css/include.css' %}">
+	<link rel="stylesheet" href="{% static 'css/homestyle.css' %}">
+{% endblock %}
+
+{% block title %} TCardLAB {% endblock %}
+
+{% block content %}
+		<!-- supreme-container for modal blur, ignore -->
+		<div class="supreme-container">
+
+		<!-- Header(Banner?) -->
+		{%include "include_tclab/header.html" %}
+
+		<!-- Navbar -->
+		{%include "include_tclab/navbar.html" %}
+
+	    <!-- Content Container -->
+	    <div class="container-fluid">
+	    	<div class="row" id= "myrow">
+	    		<!-- Left Column -->
+				<div class="col-2 d-none d-md-block"><br>
+					Ad space
+				</div>
+
+
+				<!-- Content Column -->
+				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id= "mycol">
+
+					<!-- Introduction -->
+					<br>
+					{{ page.intro|richtext }}
+					<hr>
+
+					<!-- Project Showcase -->
+					<h3>Project Showcase:</h3>
+					<a class="tile" id="keytile"> <!--Schedge-->
+				        <img src="images/projects/sched2.jpg" class="tile__media">
+
+				        <span class="tile__content">
+				        	<h1 class="h-5 text-white">Sci-Schedge</h1>
+							<hr class="my-1" style = "background-color: white;"/>
+							<p class="lead text-white d-none d-sm-block">Use modern methods of computation to implement the latest health guidelines in your life.</p>
+							<div class="btn btn-primary outline d-none d-sm-inline" id=hoverbtn href="#" role="button">Learn more</div>
+				        </span>
+			    	</a>
+			    	<br>
+
+			    	<!-- Secondary Project Cards -->
+			    	<div class="row" id="showcaserow" style = "padding-left:15px; padding-right:15px;">
+			    		<span class="card mb-3" id="mycard">
+							<img class="card-img-top" src="images/nexus/nexus7.jpeg" alt="Card image cap">
+							<div class="card-body">
+								<h5 class="card-title">Knowledge Nexus</h5>
+							    <p class="card-text d-none d-sm-block">Input your dreams and find the path to them. Sync to Sci-Schedge for a customized curriculum that meets your needs.</p>
+							</div>
+						</span>
+			    		
+			    		<span class="card mb-3" id="mycard">
+							<img class="card-img-top" src="images/reading/list1.jpg" alt="Card image cap">
+							<div class="card-body">
+								<h5 class="card-title">Reading List</h5>
+							    <p class="card-text d-none d-sm-block">Tired of forgetting all the books you read? Wish you read more? Upload or sync (google sheets, git spreadsheets) your read and to read list. Our calculator uses memory science to determin when you need review and when you can learn something new!</p>
+							</div>
+						</span>
+
+						<span class="card mb-3" id="mycard">
+							<img class="card-img-top" src="images/health/calc1.png" alt="Card image cap">
+							<div class="card-body">
+								<h5 class="card-title">Health Guideline Calculator</h5>
+							    <p class="card-text d-none d-sm-block">Automatically determine your health requirements and sync them to Sci-Sched. (Healthline/Calc)</p>
+							</div>
+						</span>
+			    	</div>
+					<br>
+
+
+					<!-- Blog Previews -->
+					{% include "include_tclab/blogpreview.html" %}
+
+				</div> 	<!-- Close: Contnent Column -->
+
+
+				<!-- Right Column -->
+				<div class="col-2 d-none d-md-block">
+					<br>
+					<p style="float:right;"> Ad space</p>
+				</div>
+
+	    	</div>	<!-- Close: row-->
+	    </div> 	<!-- Close: container-->
+
+	    <!-- Footer -->
+	    {% include "include_tclab/footer.html" %}
+
+    </div>	<!-- Close: supreme-container -->
+
+    <!-- Modal: Must be outside supreme container -->
+	{% include "include_tclab/modallogin.html" %}
+
+{% endblock %}

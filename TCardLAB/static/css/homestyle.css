@@ -21,7 +21,8 @@
 	/* Large devices (large desktops, 768px and up) */
 	@media (min-width: 768px){
 		#myrow  {
-		background-image: url(images/bg1test2.png);
+		  background-color: #e0e0e0;
+		/* background-image: url(images/bg1test2.png); */
 		/*background-size: cover;*/
 		/*background-position: center;*/
 		}

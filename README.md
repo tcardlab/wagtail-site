@@ -20,3 +20,21 @@ My first website built with django-wagtail and vue! (2018)
     
     # Run
     $ python manage.py runserver
+
+## Preview
+I have never published this site and cannot guarantee an easy start up.
+So, I have provided some screen shots.
+### Home Page
+![Home Page](https://github.com/TCardLab/wagtail-site/blob/media/readme_images/home.png)
+<!--![Home Page](./media/readme_images/home.png)-->
+
+### About Page
+![Home Page](https://github.com/TCardLab/wagtail-site/blob/media/readme_images/about.png)
+
+### About Page
+![Home Page](https://github.com/TCardLab/wagtail-site/blob/media/readme_images/about.png)
+
+![Quora Feed](https://github.com/TCardLab/wagtail-site/blob/media/readme_images/Quora.png)
+
+### Blog Index Page 
+![Blog Index](https://github.com/TCardLab/wagtail-site/blob/media/readme_images/blogIndex.png)
